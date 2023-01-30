@@ -13,7 +13,7 @@ available.
 
 Download and install the package with
 
-    git clone ...
+    git clone https://github.com/andreasbaumg/peakspline.git
     pip install peakspline
 
 
