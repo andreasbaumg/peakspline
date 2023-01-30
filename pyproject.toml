@@ -20,7 +20,7 @@ classifiers = [
 ]
 
 [project.urls]
-repository = "https://gitlab.dlr.de/baum_ad/p4001-spline"
+repository = "https://github.com/andreasbaumg/peakspline"
 
 [build-system]
 requires = [
