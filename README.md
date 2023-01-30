@@ -1,4 +1,4 @@
-# Peak-Response-Spline
+# Peak-Spline
 
 This package provides the _fit_peakspline_ function for fitting Gaussian-like
 functions. These functions can have an arbitrary shape but must reach on the
