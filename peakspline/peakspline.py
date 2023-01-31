@@ -229,11 +229,6 @@ def fit_peakspline(
         ydata: Position data of peak.
         ydata: Intensity data of peak.
         weights: Weights of the data.
-        threshold: Values below the threshold are used for detection of response
-            edge. As threshold is a relative value referenced to 1, values must
-            be between 0 and 1.
-        nmin: Minimum amount of values which must below the threshold. Half of
-            nmin must be on the left and right hand side of the peak.
         mode: If mode is `median` (default) the median is used to determine the
             center position. If mode is `max` the maximum position is used as
             the center position.
