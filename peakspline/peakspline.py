@@ -218,7 +218,6 @@ def _integral_tot(tck: tcktype) -> float:
 def fit_peakspline(
     xdata: npt.NDArray[np.float_],
     ydata: npt.NDArray[np.float_],
-    weights: npt.NDArray[np.float_] | None = None,
     mode: str = "median",
     integral_res: float = GAUSS_FWHM_INTEGRAL,
 ) -> PeakSplineResults:
@@ -228,7 +227,6 @@ def fit_peakspline(
     Args:
         ydata: Position data of peak.
         ydata: Intensity data of peak.
-        weights: Weights of the data.
         mode: If mode is `median` (default) the median is used to determine the
             center position. If mode is `max` the maximum position is used as
             the center position.
@@ -241,9 +239,7 @@ def fit_peakspline(
     idx = np.argsort(xdata)
     xdata = np.take(xdata, idx)
     ydata = np.take(ydata, idx)
-    if weights is not None:
-        weights = np.take(weights, idx)
-    tck = splrep(xdata, ydata, w=weights)
+    tck = splrep(xdata, ydata)
     integ_tot = _integral_tot(tck)
     if mode == "median":
         center = _fit_center_median(xdata, ydata, tck, integ_tot)
